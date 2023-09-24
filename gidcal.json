@@ -1,0 +1,36 @@
+{
+  "January": {
+    "1": {
+      "OldTestament": {
+        "Genesis": {
+          "chapters": [1, 2]
+        }
+      },
+      "NewTestament": {
+        "Matthew": {
+          "chapter": 1,
+          "verses": {
+            "from": 1,
+            "to": 25
+          }
+        }
+      }
+    }
+  },
+  "2": {
+    "OldTestament": {
+      "Genesis": {
+        "chapters": [1, 2]
+      }
+    },
+    "NewTestament": {
+      "Matthew": {
+        "chapter": 1,
+        "verses": {
+          "from": 1,
+          "to": 25
+        }
+      }
+    }
+  }
+}
