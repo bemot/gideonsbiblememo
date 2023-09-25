@@ -3,7 +3,7 @@ import React, { Component } from "react";
 //import og from "../BIBLES/UkrainianOgienko.json";
 //import rs from "../BIBLES/RussianSynodal.json";
 import jsonData from "../ChatGPT/calendar.json";
-import { DropdownList } from "react-widgets";
+//import { DropdownList } from "react-widgets";
 import "react-widgets/styles.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-bootstrap";
@@ -67,38 +67,6 @@ function findVersesByDate(jsonData, targetMonthDay) {
   return null;
 }
 
-function ActivateBible(props) {
-  //console.log("props ", props);
-  const bibles = [
-    { name: "Ukrainian Ogienko Bible" },
-    { name: "King James Bible" },
-    { name: "Russian Synodal Bible" },
-  ];
-  //let alertWhenChanged = () => console.log('from activeBible');
-  return (
-    <div>
-      <DropdownList
-        data={bibles}
-        valueField="name"
-        textField="name"
-        defaultValue={bibles[0].name}
-        onChange={props.onChange}
-      />
-    </div>
-  );
-}
-
-function ShowCurentBible(props) {
-  //console.log("in show current bible", og);
-  if (props.biblename === "Ukrainian Ogienko Bible")
-    return <div>Current bible: {props.biblename}</div>;
-  if (props.biblename === "King James Bible")
-    return <div>Current bible: {props.biblename}</div>;
-
-  if (props.biblename === "Russian Synodal Bible")
-    return <div>Current bible: {props.biblename}</div>;
-}
-
 function ShowDayMonth(props) {
   //console.log("in showdaymonth", props);
   let day = props.date.getDate();
@@ -111,11 +79,10 @@ function ShowDayMonth(props) {
     verses.newTestament[0].book + " " + verses.newTestament[0].chapterVerse;
   let OTtext =
     verses.oldTestament[0].book + " " + verses.oldTestament[0].chapterVerse;
-
   return (
     <div>
-      <div>New Testament: {NTtext}</div>
-      <div>Old Testament: {OTtext}</div>
+      <div style={{ fontSize: "75px" }}>{NTtext}</div>
+      <div style={{ fontSize: "75px" }}>{OTtext}</div>
     </div>
   );
 }
