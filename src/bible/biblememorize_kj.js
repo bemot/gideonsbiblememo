@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import maindata from "../BIBLES/UkrainianOgienko.json";
+import maindata from "../BIBLES/KingJames.json";
 import objectHash from "object-hash";
 
 import { DropdownList } from "react-widgets";
@@ -163,7 +163,7 @@ function InactiveWords(props) {
   );
 } //end InactiveWords
 
-class VerseMemorizeOG extends Component {
+class VerseMemorizeKJ extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -172,7 +172,7 @@ class VerseMemorizeOG extends Component {
       chapterNumber: 0,
       verseNumber: 0,
       value_main: "",
-      verse: "На початку Бог створив Небо та землю.",
+      verse: "In the beginning God created the heaven and the earth.",
       bible_words: [],
       text_hash: objectHash.sha1(""),
       main_hash: objectHash.sha1(""),
@@ -471,4 +471,4 @@ class VerseMemorizeOG extends Component {
   }
 }
 
-export default VerseMemorizeOG;
+export default VerseMemorizeKJ;
