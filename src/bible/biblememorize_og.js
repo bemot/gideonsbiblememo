@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState, useEffect } from "react";
 import maindata from "../BIBLES/UkrainianOgienko.json";
 import objectHash from "object-hash";
 
@@ -84,27 +84,33 @@ function ActiveChapter(props) {
 ///////////////////////////////////////////////////////////////////////////////////
 
 function ActiveVerse(props) {
-  var virshi = [];
+  const [selectedVerses, setSelectedVerses] = useState([]);
 
-  //console.log(props.bible);
-  //console.log(props.chap_num)
-  //console.log(props.value)
-  // console.log(chaps)
-  virshi = props.bible.books[props.book_num].chapters[
+  let virshi = props.bible.books[props.book_num].chapters[
     props.chap_num
   ].verses.map((verse, index) => ({
     verse_id: index + 1,
     verse_name: verse.name,
   }));
 
+  // Filter out already selected verses
+  virshi = virshi.filter((verse) => !selectedVerses.includes(verse.verse_id));
+
+  const handleSelectChange = (newSelectedVerses) => {
+    setSelectedVerses(newSelectedVerses.map((v) => v.verse_id));
+    if (props.onChange) {
+      props.onChange(newSelectedVerses);
+    }
+  };
+
   return (
     <div className="active-dropdown-container">
       <Multiselect
-        className="multiselect-control" // Added class here
+        className="multiselect-control"
         data={virshi}
         valueField="verse_id"
         textField="verse_id"
-        onChange={props.onChange}
+        onChange={handleSelectChange}
         defaultValue={[]}
       />
     </div>

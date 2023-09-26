@@ -3,7 +3,7 @@ import "./App.css"; // Or wherever y-inspired CSS is located
 import GideonsReading from "./bible/gideonsreading.js";
 import BibleReader from "./bible/showbiblefrom3.js";
 import VerseMemorizeOG from "./bible/biblememorize_og";
-import VerseMemorizeKJ from "./bible/biblememorize_kj";
+//import VerseMemorizeKJ from "./bible/biblememorize_kj";
 
 function App() {
   const [activeComponent, setActiveComponent] = useState("GideonsReading");
@@ -29,18 +29,11 @@ function App() {
         >
           Memorizer Ogienko
         </button>
-        <button
-          onClick={() => setActiveComponent("VerseMemorizeKJ")}
-          className={activeComponent === "VerseMemorizeKJ" ? "active" : ""}
-        >
-          Memorizer King James
-        </button>
       </div>
 
       {activeComponent === "GideonsReading" && <GideonsReading />}
       {activeComponent === "BibleReader" && <BibleReader />}
       {activeComponent === "VerseMemorizeOG" && <VerseMemorizeOG />}
-      {activeComponent === "VerseMemorizeKJ" && <VerseMemorizeKJ />}
     </div>
   );
 }
