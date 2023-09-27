@@ -55,6 +55,17 @@ button:hover {
   background-color: #2c3b4a;
 }
 
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw; /* Full width of the viewport */
+  height: 100vh; /* Full height of the viewport */
+  position: absolute; /* To position it over other content */
+  top: 0;
+  left: 0;
+}
+
 .loader {
   border: 16px solid #f3f3f3;
   border-radius: 50%;

@@ -30,13 +30,31 @@ function App() {
           Memorizer Ogienko
         </button>
       </div>
-      <Suspense fallback={<div className="loader"></div>}>
+      <Suspense
+        fallback={
+          <div className="loader-container">
+            <div className="loader"></div>
+          </div>
+        }
+      >
         {activeComponent === "GideonsReading" && <GideonsReading />}
       </Suspense>
-      <Suspense fallback={<div className="loader"></div>}>
+      <Suspense
+        fallback={
+          <div className="loader-container">
+            <div className="loader"></div>
+          </div>
+        }
+      >
         {activeComponent === "BibleReader" && <BibleReader />}
       </Suspense>
-      <Suspense fallback={<div className="loader"></div>}>
+      <Suspense
+        fallback={
+          <div className="loader-container">
+            <div className="loader"></div>
+          </div>
+        }
+      >
         {activeComponent === "VerseMemorizeOG" && <VerseMemorizeOG />}
       </Suspense>
     </div>
