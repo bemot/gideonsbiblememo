@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, Suspense } from "react";
 import "./App.css"; // Or wherever y-inspired CSS is located
-import GideonsReading from "./bible/gideonsreading.js";
-import BibleReader from "./bible/showbiblefrom3.js";
-import VerseMemorizeOG from "./bible/biblememorize_og";
+const GideonsReading = React.lazy(() => import("./bible/gideonsreading.js"));
+const BibleReader = React.lazy(() => import("./bible/showbiblefrom3.js"));
+const VerseMemorizeOG = React.lazy(() => import("./bible/biblememorize_og"));
 //import VerseMemorizeKJ from "./bible/biblememorize_kj";
 
 function App() {
@@ -30,10 +30,15 @@ function App() {
           Memorizer Ogienko
         </button>
       </div>
-
-      {activeComponent === "GideonsReading" && <GideonsReading />}
-      {activeComponent === "BibleReader" && <BibleReader />}
-      {activeComponent === "VerseMemorizeOG" && <VerseMemorizeOG />}
+      <Suspense fallback={<div className="loader"></div>}>
+        {activeComponent === "GideonsReading" && <GideonsReading />}
+      </Suspense>
+      <Suspense fallback={<div className="loader"></div>}>
+        {activeComponent === "BibleReader" && <BibleReader />}
+      </Suspense>
+      <Suspense fallback={<div className="loader"></div>}>
+        {activeComponent === "VerseMemorizeOG" && <VerseMemorizeOG />}
+      </Suspense>
     </div>
   );
 }

@@ -9,7 +9,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "react-bootstrap";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-
+import "../css/BibleReader.css";
 function formatToTwoDigits(value) {
   return value.padStart(2, "0");
 }
