@@ -80,9 +80,9 @@ function ShowDayMonth(props) {
   let OTtext =
     verses.oldTestament[0].book + " " + verses.oldTestament[0].chapterVerse;
   return (
-    <div>
-      <div style={{ fontSize: "75px" }}>{NTtext}</div>
-      <div style={{ fontSize: "75px" }}>{OTtext}</div>
+    <div className="verse-container">
+      <div> {NTtext}</div>
+      <div>{OTtext}</div>
     </div>
   );
 }
@@ -144,7 +144,6 @@ class GideonsReading extends Component {
           />
         </div>
         <div>
-          Gideons Reading:
           <ShowDayMonth date={this.state.date} />
         </div>
       </div>
