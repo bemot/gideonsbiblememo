@@ -3,6 +3,8 @@ import "./App.css"; // Or wherever y-inspired CSS is located
 const GideonsReading = React.lazy(() => import("./bible/gideonsreading.js"));
 const BibleReader = React.lazy(() => import("./bible/showbiblefrom3.js"));
 const VerseMemorizeOG = React.lazy(() => import("./bible/biblememorize_og"));
+const VerseMemorizeKJ = React.lazy(() => import("./bible/biblememorize_kj"));
+
 //import VerseMemorizeKJ from "./bible/biblememorize_kj";
 
 function App() {
@@ -28,6 +30,12 @@ function App() {
           className={activeComponent === "VerseMemorizeOG" ? "active" : ""}
         >
           Memorizer Ogienko
+        </button>
+        <button
+          onClick={() => setActiveComponent("VerseMemorizeKJ")}
+          className={activeComponent === "VerseMemorizeKJ" ? "active" : ""}
+        >
+          Memorizer King James
         </button>
       </div>
       <Suspense
@@ -56,6 +64,15 @@ function App() {
         }
       >
         {activeComponent === "VerseMemorizeOG" && <VerseMemorizeOG />}
+      </Suspense>
+      <Suspense
+        fallback={
+          <div className="loader-container">
+            <div className="loader"></div>
+          </div>
+        }
+      >
+        {activeComponent === "VerseMemorizeKJ" && <VerseMemorizeKJ />}
       </Suspense>
     </div>
   );

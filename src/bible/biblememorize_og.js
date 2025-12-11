@@ -201,7 +201,7 @@ class VerseMemorizeOG extends Component {
   // all handlers here
   //
 
-  componentDidMount() {}
+  componentDidMount() { }
 
   /////////////////////////////////////////////////////////////////////////////////////
   async handleChangeBCW(bk, ch, vr) {
@@ -287,9 +287,9 @@ class VerseMemorizeOG extends Component {
       const hash_string = objectHash.sha1(
         this.state.value_main + chunk_of_words,
       );
-      if (compareHashes(hash_string, this.state.text_hash)) {
-        alert("You are genius!!!");
-      }
+      //if (compareHashes(hash_string, this.state.text_hash)) {
+      //alert("You are genius!!!");
+      //}
       return {
         value_main: this.state.value_main + chunk_of_words,
         main_hash: hash_string,
@@ -346,9 +346,9 @@ class VerseMemorizeOG extends Component {
     // console.log('new_hash', new_hash);
     // console.log('text hash', this.state.text_hash);
 
-    if (compareHashes(new_hash, this.state.text_hash)) {
-      alert("You are genius!!!");
-    }
+    // if (compareHashes(new_hash, this.state.text_hash)) {
+    //   alert("You are genius!!!");
+    // }
     this.setState({
       value_main: value_main,
       main_hash: objectHash.sha1(value_main),
