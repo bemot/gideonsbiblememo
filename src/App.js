@@ -4,6 +4,7 @@ const GideonsReading = React.lazy(() => import("./bible/gideonsreading.js"));
 const BibleReader = React.lazy(() => import("./bible/showbiblefrom3.js"));
 const VerseMemorizeOG = React.lazy(() => import("./bible/biblememorize_og"));
 const VerseMemorizeKJ = React.lazy(() => import("./bible/biblememorize_kj"));
+const VerseMemorizeGE = React.lazy(() => import("./bible/biblememorize_ge"));
 
 //import VerseMemorizeKJ from "./bible/biblememorize_kj";
 
@@ -36,6 +37,12 @@ function App() {
           className={activeComponent === "VerseMemorizeKJ" ? "active" : ""}
         >
           Memorizer King James
+        </button>
+        <button
+          onClick={() => setActiveComponent("VerseMemorizeGE")}
+          className={activeComponent === "VerseMemorizeGE" ? "active" : ""}
+        >
+          Memorizer German
         </button>
       </div>
       <Suspense
@@ -73,6 +80,15 @@ function App() {
         }
       >
         {activeComponent === "VerseMemorizeKJ" && <VerseMemorizeKJ />}
+      </Suspense>
+      <Suspense
+        fallback={
+          <div className="loader-container">
+            <div className="loader"></div>
+          </div>
+        }
+      >
+        {activeComponent === "VerseMemorizeGE" && <VerseMemorizeGE />}
       </Suspense>
     </div>
   );

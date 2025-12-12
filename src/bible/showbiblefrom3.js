@@ -4,12 +4,14 @@ import React, { useState, useEffect } from "react";
 import russianSynodal from "../BIBLES/RussianSynodal.json";
 import ukrainianOgienko from "../BIBLES/UkrainianOgienko.json";
 import kingJames from "../BIBLES/KingJames.json";
+import germanSchlachter from "../BIBLES/GermanSchlachter.json";
 import "../css/BibleReader.css";
 
 const BIBLE_VERSIONS = {
   "Ukrainian Ogienko": ukrainianOgienko,
   "King James": kingJames,
   "Russian Synodal": russianSynodal,
+  "German Schlachter": germanSchlachter,
 };
 
 const BibleReader = () => {
